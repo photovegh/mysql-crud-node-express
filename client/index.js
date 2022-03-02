@@ -14,14 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("test3", data["data"][0].date_added);
             localStorage.setItem("test0", data["data"][1].name); */
             /* INFO: objektumból tömb  INFO: */
-            var vnames = [];
+            /* var vnames = [];
             let i = 0;
-            for (vname in data["data"][i].name) {
-                //console.log(data["data"][i].name);
-                vnames[i] = data["data"][i].name;
-                //console.log(vnames[i]);
-                i++;
-            }
+            for (vname in data["data"][i].name) { */
+            //console.log(data["data"][i].name);
+            //vnames[i] = data["data"][i].name;
+            //console.log(vnames[i]);
+            //i++;
+            //}
+            //
         });
 });
 
