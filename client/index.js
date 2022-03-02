@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
             loadHTMLTable(data["data"]);
 
             /* INFO: main test local storage  INFO: */
-            console.log(data["data"][0].id);
+            /* console.log(data["data"][0].id);
             console.log(data["data"][0].name);
-            console.log(data["data"][0].date_added);
+            console.log(data["data"][0].date_added); */
             /* localStorage.setItem("test1", data["data"][0].id);
             localStorage.setItem("test2", data["data"][0].name);
             localStorage.setItem("test3", data["data"][0].date_added);
@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
             var vnames = [];
             let i = 0;
             for (vname in data["data"][i].name) {
-                console.log(data["data"][i].name);
+                //console.log(data["data"][i].name);
                 vnames[i] = data["data"][i].name;
-                console.log(vnames[i]);
+                //console.log(vnames[i]);
                 i++;
             }
         });
