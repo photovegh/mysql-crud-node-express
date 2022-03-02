@@ -5,10 +5,17 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const dbService = require("./dbService");
+const { request, response } = require("express");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// NOTE: HTML  NOTE:
+app.use(express.static("../client"));
+app.get("/", (request, response) => {
+    response.sendFile("../index.html");
+});
 
 // NOTE: create  NOTE:
 app.post("/insert", (request, response) => {
