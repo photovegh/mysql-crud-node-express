@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("test2", data["data"][0].name);
             localStorage.setItem("test3", data["data"][0].date_added);
             localStorage.setItem("test0", data["data"][1].name); */
+            /* INFO: objektumból tömb  INFO: */
+            var vnames = [];
+            let i = 0;
+            for (vname in data["data"][i].name) {
+                console.log(data["data"][i].name);
+                vnames[i] = data["data"][i].name;
+                console.log(vnames[i]);
+                i++;
+            }
         });
 });
 
@@ -31,7 +40,10 @@ const searchBtn = document.querySelector("#search-btn");
 
 searchBtn.onclick = function () {
     const searchValue = document.querySelector("#search-input").value;
-
+    /* INFO: ha a keresés üres sztring  INFO: */
+    if (searchValue == "") {
+        location.reload();
+    }
     fetch("http://localhost:5000/search/" + searchValue)
         .then((response) => response.json())
         .then((data) => loadHTMLTable(data["data"]));
