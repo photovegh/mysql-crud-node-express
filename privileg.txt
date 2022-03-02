@@ -1,0 +1,19 @@
+# `root`@`localhost` jogosultságai
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+
+GRANT PROXY ON ''@'' TO 'root'@'localhost' WITH GRANT OPTION;
+
+
+# `vanillaport`@`%` jogosultságai
+
+GRANT ALL PRIVILEGES ON *.* TO 'vanillaport'@'%' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON `vanillap_vanilla`.* TO 'vanillaport'@'%';
+
+
+# `web_app`@`%` jogosultságai
+
+GRANT USAGE ON *.* TO 'web_app'@'%';
+
+GRANT ALL PRIVILEGES ON `web_app`.* TO 'web_app'@'%' WITH GRANT OPTION;
