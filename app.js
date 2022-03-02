@@ -14,12 +14,12 @@ app.use(express.urlencoded({ extended: false }));
 
 // NOTE: HTML  NOTE:
 /* app.use(express.static("../client")); */
-//app.use(express.static("client"));
-/* app.get("/", (request, response) => {
-    response.sendFile("/client/index.html"); */
-//res.sendFile(__dirname + "/views/index.html")
-/* res.sendFile("../index.html"); */
-//});
+app.use(express.static("client"));
+app.get("/", (request, response) => {
+    response.sendFile("/client/index.html");
+    res.sendFile(__dirname + "/views/index.html");
+    res.sendFile("../index.html");
+});
 
 // NOTE: create  NOTE:
 app.post("/insert", (request, response) => {
