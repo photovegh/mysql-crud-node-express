@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     /* fetch("http://localhost:5000/getAll") */
-    fetch("http://192.168.0.116:5000/getAll")
+    /* fetch("http://192.168.0.116:5000/getAll") */
+    fetch("/getAll/")
         .then((response) => response.json())
         .then((data) => {
             loadHTMLTable(data["data"]);
@@ -46,13 +47,13 @@ searchBtn.onclick = function () {
     if (searchValue == "") {
         location.reload();
     }
-    fetch("http://192.168.0.116:5000/search/" + searchValue)
+    fetch("/search/" + searchValue)
         .then((response) => response.json())
         .then((data) => loadHTMLTable(data["data"]));
 };
 
 function deleteRowById(id) {
-    fetch("http://192.168.0.116:5000/delete/" + id, {
+    fetch("/delete/" + id, {
         method: "DELETE",
     })
         .then((response) => response.json())
@@ -74,7 +75,7 @@ updateBtn.onclick = function () {
 
     console.log(updateNameInput);
 
-    fetch("http://192.168.0.116:5000/update", {
+    fetch("/update/", {
         method: "PATCH",
         headers: {
             "Content-type": "application/json",
@@ -99,7 +100,7 @@ addBtn.onclick = function () {
     const name = nameInput.value;
     nameInput.value = "";
 
-    fetch("http://192.168.0.116:5000/insert", {
+    fetch("/insert/", {
         headers: {
             "Content-type": "application/json",
         },
